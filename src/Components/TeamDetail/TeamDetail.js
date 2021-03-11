@@ -43,6 +43,7 @@ const TeamDetail = () => {
     strTwitter,
     strTeamJersey,
     strDescriptionEN,
+    strfemaleImg,
   } = teams;
 
   return (
@@ -88,7 +89,11 @@ const TeamDetail = () => {
             </p>
           </div>
           <div className="col-md-6">
-            <img style={{ width: "15rem" }} src={strTeamJersey} alt="" />
+            {strGender === "Male" ? (
+              <img style={{ width: "15rem" }} src={strTeamJersey} alt="" />
+            ) : (
+              <img style={{ width: "15rem" }} src={strfemaleImg} alt="" />
+            )}
           </div>
           <div>
             <p className="text-light p-4"> {strDescriptionEN} </p>

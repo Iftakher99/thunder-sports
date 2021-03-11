@@ -90,9 +90,17 @@ const TeamDetail = () => {
           </div>
           <div className="col-md-6">
             {strGender === "Male" ? (
-              <img style={{ width: "15rem" }} src={strTeamJersey} alt="" />
+              <img
+                style={{ width: "15rem" }}
+                src="https://scontent.xx.fbcdn.net/v/t1.15752-0/s350x350/158338570_485019785867677_4419907202337821852_n.png?_nc_cat=107&ccb=1-3&_nc_sid=58c789&_nc_ohc=wOJ_ZYws494AX8DNJYG&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_tp=30&oh=e42fc2a49c6d62754fde0471eddd387e&oe=607088FB"
+                alt=""
+              />
             ) : (
-              <img style={{ width: "15rem" }} src={strfemaleImg} alt="" />
+              <img
+                style={{ width: "15rem" }}
+                src="https://scontent.xx.fbcdn.net/v/t1.15752-0/s350x350/157656993_448260926227600_1564583162431966130_n.png?_nc_cat=101&ccb=1-3&_nc_sid=58c789&_nc_ohc=dUrqbHSvH5EAX_xuCHW&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_tp=30&oh=a7b69db250ddb3d8734a0b3b82c54579&oe=606ED51D"
+                alt=""
+              />
             )}
           </div>
           <div>

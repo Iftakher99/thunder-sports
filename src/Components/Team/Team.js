@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Team = (props) => {
   const { strTeam, idTeam, strTeamLogo, strStadium } = props.team;
   const leagueStyle = {
-    height: "350px",
+    height: "300px",
     width: "300px",
     margin: "15px",
     padding: "10px",
@@ -15,7 +15,7 @@ const Team = (props) => {
     float: "left",
   };
   return (
-    <div style={leagueStyle}>
+    <div className="bg-light" style={leagueStyle}>
       <div style={{ width: "15rem" }}>
         <img class="card-img-top" src={strTeamLogo} alt="" />
         <div class="card-body">

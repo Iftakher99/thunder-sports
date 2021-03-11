@@ -5,8 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import {
+  faAirFreshener,
+  faAnchor,
+  faAnkh,
+  faArrowsAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { faArtstation } from "@fortawesome/free-brands-svg-icons";
 
 const TeamDetail = () => {
   const backgroundStyle = {
@@ -36,7 +41,6 @@ const TeamDetail = () => {
     strGender,
     strYoutube,
     strTwitter,
-    strInstagram,
     strTeamJersey,
     strDescriptionEN,
   } = teams;
@@ -58,11 +62,30 @@ const TeamDetail = () => {
         <div className="row">
           <div className="col-md-6 text-light">
             <h1> {teams.strTeam}</h1>
-            <p> Full Name : {strAlternate}</p>
-            <p> Founded : {intFormedYear}</p>
-            <p> Stadium : {strStadium} </p>
-            <p> Capacity : {intStadiumCapacity} </p>
-            <p> Gender : {strGender} </p>
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faAirFreshener} /> Full Name :{" "}
+              {strAlternate}
+            </p>
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faAnchor} /> Founded : {intFormedYear}
+            </p>
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faAnkh} />
+              Stadium : {strStadium}{" "}
+            </p>
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faArrowsAlt} /> Capacity :{" "}
+              {intStadiumCapacity}{" "}
+            </p>
+            <p>
+              {" "}
+              <FontAwesomeIcon icon={faArtstation} />
+              Gender : {strGender}{" "}
+            </p>
           </div>
           <div className="col-md-6">
             <img style={{ width: "15rem" }} src={strTeamJersey} alt="" />
@@ -77,9 +100,7 @@ const TeamDetail = () => {
             <a href={strTwitter}>
               <FontAwesomeIcon icon={faTwitter} />
             </a>
-            <a href={strInstagram}>
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
+
             <a href={strYoutube}>
               <FontAwesomeIcon icon={faYoutube} />
             </a>

@@ -11,9 +11,9 @@ const Header = () => {
     <div style={backgroundStyle}>
       <h1
         className="d-flex justify-content-center w-800 pt-5"
-        style={{ color: "Black" }}
+        style={{ color: "yellow" }}
       >
-        Thunder Sports
+        Thunder League
       </h1>
     </div>
   );

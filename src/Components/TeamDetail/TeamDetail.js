@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-
-const element = <FontAwesomeIcon icon={faCoffee} />;
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const TeamDetail = () => {
   const backgroundStyle = {
@@ -13,6 +15,10 @@ const TeamDetail = () => {
     backgroundSize: "cover",
     backgroundPosition: "bottom",
   };
+  const logoStyle = {
+    fontSize: "2rem",
+    paddingRight: "5px",
+  };
   const { teamId } = useParams();
   const [teams, setTeams] = useState({});
   useEffect(() => {
@@ -20,7 +26,21 @@ const TeamDetail = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTeams(data.teams[0]));
-  }, []);
+  }, [teamId]);
+  const {
+    strAlternate,
+    strFacebook,
+    intFormedYear,
+    strStadium,
+    intStadiumCapacity,
+    strGender,
+    strYoutube,
+    strTwitter,
+    strInstagram,
+    strTeamJersey,
+    strDescriptionEN,
+  } = teams;
+
   return (
     <div>
       <div>
@@ -33,28 +53,37 @@ const TeamDetail = () => {
           </h1>
         </div>
       </div>
-      {/* <h4>This is Team Detail of {teamId}</h4>
-      <p>Name : {teams.strAlternate}</p> */}
-      <div className="container p-5 bg-info">
+
+      <div className="container p-5 bg-dark">
         <div className="row">
           <div className="col-md-6 text-light">
             <h1> {teams.strTeam}</h1>
-            <p> Full Name : {teams.strAlternate}</p>
-            <p> Founded : {teams.intFormedYear}</p>
-            <p> Stadium : {teams.strStadium} </p>
-            <p> Capacity : {teams.intStadiumCapacity} </p>
-            <p> Gender : {teams.strGender} </p>
+            <p> Full Name : {strAlternate}</p>
+            <p> Founded : {intFormedYear}</p>
+            <p> Stadium : {strStadium} </p>
+            <p> Capacity : {intStadiumCapacity} </p>
+            <p> Gender : {strGender} </p>
           </div>
           <div className="col-md-6">
-            <img style={{ width: "15rem" }} src={teams.strTeamJersey} alt="" />
+            <img style={{ width: "15rem" }} src={strTeamJersey} alt="" />
           </div>
           <div>
-            <p className="text-light p-4"> {teams.strDescriptionEN} </p>
+            <p className="text-light p-4"> {strDescriptionEN} </p>
           </div>
-          <div>
-            {element}
-            <FontAwesomeIcon icon={faCoffee} />
-          </div>
+          <footer style={logoStyle} className="mx-auto">
+            <a href={strFacebook}>
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+            <a href={strTwitter}>
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a href={strInstagram}>
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a href={strYoutube}>
+              <FontAwesomeIcon icon={faYoutube} />
+            </a>
+          </footer>
         </div>
       </div>
     </div>
